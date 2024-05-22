@@ -360,10 +360,8 @@ int safeLoadInt(int* input)
 	char buffer[64];
 	if (fgets(buffer, sizeof(buffer), stdin) != NULL)
 	{
-		// Check if the input is a valid integer and nothing else
 		if (sscanf(buffer, "%d", input) == 1)
 		{
-			// Check if the input has only one number and nothing else
 			char* endptr;
 			strtol(buffer, &endptr, 10);
 			if (*endptr == '\n' || *endptr == '\0')
@@ -380,10 +378,8 @@ int safeLoadDouble(double* input)
 	char buffer[64];
 	if (fgets(buffer, sizeof(buffer), stdin) != NULL)
 	{
-		// Check if the input is a valid double and nothing else
 		if (sscanf(buffer, "%lf", input) == 1)
 		{
-			// Check if the input has only one number and nothing else
 			char* endptr;
 			strtod(buffer, &endptr);
 			if (*endptr == '\n' || *endptr == '\0')
